@@ -12,6 +12,40 @@ const serverlessConfiguration: AWS = {
     }
   },
   plugins: ['serverless-webpack'],
+  resources: {
+    Resources: {
+      DynamoDbTable: {
+        Type: 'AWS::DynamoDB::Table',
+        Properties: {
+          AttributeDefinitions: [
+            {
+              AttributeName: 'id',
+              AttributeType: 'S',
+            },
+            {
+              AttributeName: 'name',
+              AttributeType: 'S',
+            },
+          ],
+          KeySchema: [
+            {
+              AttributeName: 'id',
+              KeyType: 'HASH',
+            },
+            {
+              AttributeName: 'name',
+              KeyType: 'RANGE',
+            },
+          ],
+          ProvisionedThroughput: {
+            ReadCapacityUnits: 1,
+            WriteCapacityUnits: 1,
+          },
+          TableName: 'fetishism'
+        },
+      }
+    },
+  },
   provider: {
     name: 'aws',
     runtime: 'nodejs12.x',
