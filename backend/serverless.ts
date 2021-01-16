@@ -11,7 +11,7 @@ const serverlessConfiguration: AWS = {
       includeModules: true
     }
   },
-  plugins: ['serverless-webpack'],
+  plugins: ['serverless-webpack', 'serverless-offline', 'serverless-dynamodb-local'],
   resources: {
     Resources: {
       DynamoDbTable: {
