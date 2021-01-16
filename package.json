@@ -22,6 +22,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start-db": "yarn workspace backend start-db",
+    "dev-backend": "yarn workspace backend dev",
     "deploy-backend": "yarn workspace backend deploy"
   },
   "workspaces": [
