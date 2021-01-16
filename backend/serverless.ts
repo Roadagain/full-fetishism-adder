@@ -19,22 +19,14 @@ const serverlessConfiguration: AWS = {
         Properties: {
           AttributeDefinitions: [
             {
-              AttributeName: 'id',
-              AttributeType: 'S',
-            },
-            {
               AttributeName: 'name',
               AttributeType: 'S',
             },
           ],
           KeySchema: [
             {
-              AttributeName: 'id',
-              KeyType: 'HASH',
-            },
-            {
               AttributeName: 'name',
-              KeyType: 'RANGE',
+              KeyType: 'HASH',
             },
           ],
           ProvisionedThroughput: {
