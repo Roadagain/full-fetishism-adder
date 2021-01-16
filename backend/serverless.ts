@@ -9,6 +9,18 @@ const serverlessConfiguration: AWS = {
     webpack: {
       webpackConfig: './webpack.config.js',
       includeModules: true
+    },
+    offline: {
+      httpsProtocol: 'dev-certs',
+      httpPort: 3000
+    },
+    dynamodb: {
+      stages: ['dev'],
+      start: {
+        port: 8000,
+        inMemory: true,
+        migrate: true
+      }
     }
   },
   plugins: ['serverless-webpack', 'serverless-offline', 'serverless-dynamodb-local'],
