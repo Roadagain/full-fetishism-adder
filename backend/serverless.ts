@@ -23,7 +23,7 @@ const serverlessConfiguration: AWS = {
       }
     }
   },
-  plugins: ['serverless-webpack', 'serverless-offline', 'serverless-dynamodb-local'],
+  plugins: ['serverless-webpack', 'serverless-dynamodb-local', 'serverless-offline'],
   resources: {
     Resources: {
       DynamoDbTable: {

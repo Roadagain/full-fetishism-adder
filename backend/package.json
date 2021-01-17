@@ -5,7 +5,7 @@
   "main": "servlerss.ts",
   "scripts": {
     "start-db": "sls dynamodb start",
-    "dev": "sls offline",
+    "dev": "sls offline start",
     "deploy": "sls deploy"
   },
   "dependencies": {
