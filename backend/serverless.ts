@@ -12,12 +12,12 @@ const serverlessConfiguration: AWS = {
     },
     offline: {
       httpsProtocol: 'dev-certs',
-      httpPort: 3000
+      httpPort: 4000
     },
     dynamodb: {
       stages: ['dev'],
       start: {
-        port: 8000,
+        port: 5000,
         inMemory: true,
         migrate: true
       }
