@@ -47,7 +47,7 @@ const serverlessConfiguration: AWS = {
           },
           TableName: 'fetishism'
         },
-      }
+      },
     },
   },
   provider: {
@@ -62,6 +62,13 @@ const serverlessConfiguration: AWS = {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
     },
     lambdaHashingVersion: '20201221',
+    iamRoleStatements: [
+      {
+        Effect: 'Allow',
+        Action: ['dynamodb:PutItem'],
+        Resource: 'arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/fetishism'
+      }
+    ]
   },
   functions: { postFetishism }
 }
